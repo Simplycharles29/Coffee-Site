@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+html{
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar{
+    width: 0.5rem;
+}
+html::-webkit-scrollbar-thumb{
+    background-color: #deb887;
+}
+html::-webkit-scrollbar-track{
+    background-color: #333;
+}
+header{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to left, rgba(0,0,0,0.3),rgba(0,0,0,0.9)), url(./images/shop2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    position: fixed;
+    padding-top: .5%;
+    z-index: 15;
+    background-color: #333;
+}
+.name h1{
+    font-size: 2rem;
+    color: #ddd;
+}
+.name span{
+    color: #deb887;
+}
+.navbar{
+    display: inline-flex;
+    gap: 5rem;
+    padding-top: 0.3%;
+}
+.navbar .navitems{
+    list-style: none;
+}
+.navbar .navitems a{
+    text-decoration: none;
+    color: #deb887;
+    font-size: 1.2rem;
+}
+.nav-button{
+    padding-top: .4%;
+}
+.nav-button a{
+    text-decoration: none;
+    color: #deb887;
+    border: .1rem solid #deb887;
+    padding: 5px 15px;
+    border-radius: 2px;
+}
+.nav-button a:hover{
+    color: #ddd;
+}
+.showcase-text{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: #ddd;
+    max-width: 800px;
+}
+.showcase-text h1{
+    color: transparent;
+    -webkit-text-stroke: 1px #ddd;
+    font-size: 3rem;
+    text-align: center;
+    letter-spacing: 3px;
+}
+.showcase-text p{
+    text-align: center;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+}
+.middle{
+    text-align: center;
+    padding-top: 2%;
+}
+.middle a{
+    border: 1px solid #deb887;
+    text-decoration: none;
+    color: #000;
+    padding: 7px 20px;
+    background-color: #deb887;
+    position: relative;
+    border-radius: 2px;
+}
+.middle a:hover{
+    color: #333;
+    background-color: #ddd;
+}
+/* services starts here */
+#products{
+    text-align: center;
+    padding: 1rem;
+    font-size: 4rem;
+    color: #333;
+}
+.services-grid{
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    margin-bottom: 3%;
+}
+.service .card{
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    width: 370px;
+    height: 240px;
+}
+.service .card .front, .services .card .back{
+    position: absolute;
+   background-color: #deb887;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    transform: rotateY(0deg);
+}
+.services .card .back{
+    transform: rotateY(180deg);
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    line-height: 1.5;
+    font-size: 1.2rem;
+}
+.services .card .back h1{
+    font-size: 2rem;
+}
+.card:hover .front{
+    transform: rotateY(-180deg);
+}
+.card:hover .back{
+    transform: rotateY(0deg);
+}
+@media(max-width:769px){
+    nav{
+        width: 100%;
+    }
+    .showcase-text{
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        color: #ddd;
+        max-width: 600px;
+    }
+    .showcase-text h1{
+        color: transparent;
+        -webkit-text-stroke: 1px #ddd;
+        font-size: 4rem;
+        line-height: 2;
+        text-align: center;
+        letter-spacing: 2px;
+    }
+    .showcase-text p{
+        text-align: center;
+        letter-spacing: 1px;
+        font-size: 2rem;
+    }
+    #products{
+        font-size: 3rem;
+    }
+    .services-grid{
+        display: block;
+        padding-left: 10rem;
+        margin-bottom: 3%;
+    }
+    .service .card{
+        margin-bottom: 4%;
+    }
+}
